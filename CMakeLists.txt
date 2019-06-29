@@ -11,8 +11,9 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 # The following folder will be included
-include_directories("${PROJECT_SOURCE_DIR}")
+include_directories(${PROJECT_SOURCE_DIR}/modules/debug ${PROJECT_SOURCE_DIR}/drivers/uart)
 
 # Files to compile
-add_executable(hello ${PROJECT_SOURCE_DIR}/application/main.c)
+add_executable(n-base ${PROJECT_SOURCE_DIR}/application/main.c
+    ${PROJECT_SOURCE_DIR}/modules/debug/debug.c ${PROJECT_SOURCE_DIR}/drivers/uart/uart.c)
 

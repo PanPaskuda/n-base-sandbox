@@ -33,6 +33,15 @@
     [Hardware Config]
     }
 
+    note right of [Drivers]
+    uC peripheral dependent
+    end note
+
+    note right of [Hardware Config]
+    PCB dependent
+    end note
+
+
     [Application] --> [Modules]
     [Modules] --> [Sub-Modules]
     [Sub-Modules] --> [Drivers]
@@ -42,10 +51,18 @@
 */
 
 #include <stdbool.h>
+#include "debug.h"
 
+
+static void init_modules(void)
+{
+    Debug_Init();
+}
 
 void main(void)
 {
+    init_modules();
+
     while(true)
     {
         //brilliant code here
