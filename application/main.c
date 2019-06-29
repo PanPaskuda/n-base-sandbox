@@ -59,6 +59,9 @@ static void init_modules(void)
     Debug_Init();
 }
 
+/**
+ * here we start
+ */
 void main(void)
 {
     init_modules();
