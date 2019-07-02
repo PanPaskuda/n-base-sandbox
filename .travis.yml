@@ -37,3 +37,7 @@ addons:
       - cmake
       - gcc-multilib
       - valgrind
+
+script:
+     - cmake -H. -Bbuild
+     - cmake --build build -- -j8
